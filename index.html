@@ -1,0 +1,85 @@
+---
+layout: default
+title: Social Networking (2016)
+---
+<div class="container">
+	<div class="container marketing">
+		<div class="row">
+			<div class="col-ld-12 col-md-12 col-sm-12">
+				<p>
+					Il <a href="http://bit.ly/polito-sonet" title="Sito del corso di Social Networking">corso</a> sviluppa un'analisi approfondita del fenomeno dei Social Network e definisce le caratteristiche tecnologiche, strutturali e le pratiche relazionali e comunicative abilitate da queste nuove forme socio-tecnologiche.
+					Durante il corso, gli studenti impareranno i concetti e i meccanismi che stanno dietro alle tecnologie del Social Web, come la progettazione di un social network, la sua realizzazione prototipale e la validazione con degli utenti.
+					In particolare, si affronter&agrave; tale argomento da due punti di vista: uno rivolto agli aspetti sociali e di comunicazione dei SNS e uno pi&ugrave; orientato verso gli aspetti di progettazione e di sviluppo tecnologico.
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-6">
+				<img src="assets/img/knowledge.png" alt="knowledge">
+				<h2>Conoscere</h2>
+				<p>
+					Analisi storica e comparativa dei principali social network mondiali, analisi delle principali teorie sull'interazione mediata e sui modelli di networking e community building, riflessione sugli effetti dei Social Network sulle dinamiche relazionali e comunicative off line. Tecnologie e best practice coinvolte nell'utilizzo di tecnologie Web e nella creazione di siti.</p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-6">
+				<img src="assets/img/skills.png" alt="skills">
+				<h2>Progettare</h2>
+				<p>Analizzare il target di un Social Network, definire il suo concept e la  value proposition, progettare le interazioni e i meccanismi di community bulding-networking, prototipare l'interfaccia e le sue affordance sociali. Disegnare modelli di engagement, viralità, sostenibilità. Progettare elementi di monitoring e design iterativo.</p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-6">
+				<img src="assets/img/engagement.png" alt="engagement">
+				<h2>Realizzare</h2>
+				<p>Progettare e implementare il proprio Social Network, lavorando in gruppi intorno a idee proposte individualmente e valutate in maniera collettiva. I gruppi saranno composti da 2 o 3 studenti e selezioneranno i progetti da portare avanti durante il corso. Realizzare un prototipo funzionante di sito, utilizzando tecnologie Web come HTML5, CSS3, JavaScript e AngularJS. Comunicare efficacemente il proprio progetto, attraverso un video di user-scenario.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-ld-12 col-md-12 col-sm-12">
+				<p>
+					Visita il sito ufficiale del corso all'indirizzo <a
+						href="http://bit.ly/polito-sonet" title="Sito del corso di Social Networking">http://bit.ly/polito-sonet</a>.
+				</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<hr />
+				<a id="projects"></a>
+			</div>
+		</div>
+		{% assign projects = site.categories.projects | sort: 'title'%}
+		{% for post in projects %}
+		{% assign odd = forloop.index0 | modulo:2 %}
+		{%if odd == 0 %}
+		<div class="row featurette">
+			<div class="col-md-7">
+				<h2 class="featurette-heading">
+					{{ post.title }}
+				</h2>
+				<p class="lead">
+					{{ post.content}} <a href="{{post.project_url}}"
+						class="btn btn-default" target="_blank">Scopri di pi&ugrave;...</a>
+				</p>
+			</div>
+			<div class="col-md-5">
+				<a href="{{post.project_url}}" target="_blank"><img src="{{post.image}}" alt="Homepage di {{post.title}}" /></a>
+			</div>
+		</div>
+		{% else %}
+		<div class="row featurette">
+			<div class="col-md-5">
+				<a href="{{post.project_url}}" target="_blank"><img src="{{post.image}}" alt="Homepage di {{post.title}}" /></a>
+			</div>
+			<div class="col-md-7">
+				<h2 class="featurette-heading">
+					{{ post.title }}
+				</h2>
+				<p class="lead">
+					{{ post.content}} <a href="{{post.project_url}}"
+						class="btn btn-default" target="_blank">Scopri di pi&ugrave;...</a>
+				</p>
+			</div>
+		</div>
+		{% endif %}
+		{% endfor %}
+	</div>
+</div>
